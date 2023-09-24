@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="./src/scss/style.css">
     <link rel="icon" href="./src/images/site-logo.png">
 
-    <!-- ICONS LINK -->
+    <!-- ICONS LINKS -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- FONTS LINK -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +27,15 @@
     <div class="mouse-follower"></div>
     <div class="mouse-follower-dot"></div>
 
-    <!-- SITE WRAPPER -->
+    <!-- SITE FULL CONTENT -->
     <div class="site-wrapper">
+        <!-- MAIN PAGE ANIMATION -->
+        <div class="main-page-decoration">
+            <div class="planet-block"></div>
+            <div class="planet-block"></div>
+        </div>
+
+        <!--HEADER WITH NAVIGATION -->
         <nav class="navigation-wrapper">
             <div class="navigation-content">
                 <div class="navigation-items">
@@ -39,54 +49,138 @@
                     </div>
                 </div>
                 <div class="navigation-menu">
-                    <a class="menu-item">
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown">
+                            <a href="">Home One</a>
+                            <a href="">Home Two</a>
+                            <a href="">Home Three</a>
+                        </div>
                         <p>Home<i class="ph ph-caret-down"></i>
                         </p>
                         <div class="menu-item-line"></div>
-                    </a>
-                    <a class="menu-item">
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown">
+                            <a href="">Games</a>
+                            <a href="">Games Details</a>
+                        </div>
+
                         <p>Games<i class="ph ph-caret-down"></i>
                         </p>
-                    </a>
-                    <a class="menu-item">
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown services-dropdown">
+                            <a href="">Services One</a>
+                            <a href="">Services Two</a>
+                            <a href="">Services Three</a>
+                            <a href="">Services Details</a>
+                            <a href="">Services Details Two</a>
+                        </div>
                         <p>Services<i class="ph ph-caret-down"></i>
                         </p>
-                    </a>
-                    <a class="menu-item">
+                    </div>
+                    <div class="menu-item">
                         <p>About
                         </p>
-                    </a>
-                    <a class="menu-item">
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown nav-pages-dropdown">
+                            <a href="">Pricing Plan</a>
+                            <a href="">Store</a>
+                            <div class="nav-pages-hover">
+                                <a href="">Shop Details<i class="ph ph-caret-right"></i></a>
+                                <div class="nav-pages-hover-dropdown">
+                                    <a href="">Shop Details One</a>
+                                    <a href="">Shop Details One</a>
+                                </div>
+                            </div>
+                            <a href="">Cart</a>
+                            <a href="">Checkout</a>
+                            <div class="nav-pages-hover">
+                                <a href="">Career<i class="ph ph-caret-right"></i></a>
+                                <div class="nav-pages-hover-dropdown">
+                                    <a href="">Career</a>
+                                    <a href="">Career Details</a>
+                                </div>
+                            </div>
+                            <a href="">Privacy Policy</a>
+                            <a href="">Terms Conditions</a>
+                        </div>
                         <p>Pages<i class="ph ph-caret-down"></i>
                         </p>
-                    </a>
-                    <a class="menu-item">
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown">
+                            <a href="">Blog</a>
+                            <a href="">Blog Details</a>
+                        </div>
                         <p>Blog<i class="ph ph-caret-down"></i>
                         </p>
-                    </a>
+                    </div>
 
-                    <a class="menu-item">
+                    <div class="menu-item">
                         <p>Contact</p>
-                    </a>
+                    </div>
                 </div>
                 <div class="manipulation-block">
-                    <a class="manipulation-circle">
-                        <i class="ph-light ph-magnifying-glass"></i>
-                    </a>
-                    <a class="manipulation-circle">
-                        <i class="ph ph-heart-straight"></i>
-                    </a>
-                    <a class="manipulation-circle">
-                        <i class="ph ph-user"></i>
-                    </a>
+                    <div class="main-circles">
+                        <a class="manipulation-circle" id="searchActive">
+                            <i class="ph-light ph-magnifying-glass"></i>
+                            <div class="manipulation-dropdown" id="searchDropdown">
+                                <h1>Search</h1>
+                                <form action="#" enctype="multipart/form-data">
+                                    <label for="manipulationSearch">
+                                        <input type="email" placeholder="Enter Your Email" name="manipulationSearch"
+                                            id="manipulationSearch">
+                                        <button class="submit">Search</button>
+                                    </label>
+                                </form>
+                            </div>
+                        </a>
+                        <a class="manipulation-circle">
+                            <i class="ph ph-heart-straight"></i>
+                        </a>
+                        <a class="manipulation-circle">
+                            <i class="ph ph-user"></i>
+                        </a>
+                    </div>
                     <a class="manipulation-circle">
                         <i class="ph ph-bag"></i>
                     </a>
                 </div>
             </div>
         </nav>
+
+        <!-- LEFT MENU FIXED -->
+        <div class="left-menu-wrapper">
+            <div class="left-menu-item">
+                <div class="menu-icon-block">
+                <i class="ph ph-list"></i>
+                <!-- <i class="ph ph-x"></i> -->
+                <p>MENU</p>
+            </div>
+            </div>
+            <div class="left-menu-item">
+                <a href="https://www.facebook.com/" class="left-menu-circle" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="left-menu-circle" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/feed/" class="left-menu-circle" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/home/" class="left-menu-circle" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </div>
+            <div class="left-menu-item">
+              <p>ENG</p>
+            </div>
+        </div>
     </div>
 </body>
+<!-- JS LINK  -->
 <script src="./src/js/main.js"></script>
 
 </html>

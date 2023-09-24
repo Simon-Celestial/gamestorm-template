@@ -44,7 +44,7 @@ body {
   border: 1px solid var(--textGreen);
   position: fixed;
   pointer-events: none;
-  transition: 30ms ease-in-out;
+  transition: 50ms linear;
   z-index: 10;
   top: -10px;
   left: -10px;
@@ -57,7 +57,7 @@ body {
   border-radius: 50px;
   background-color: var(--textGreen);
   position: fixed;
-  transition: 20ms ease-in-out;
+  transition: 30ms linear;
   z-index: 10;
   top: -10px;
   left: -10px;
@@ -69,12 +69,15 @@ body {
   width: 100%;
   flex-direction: column;
 }
+
+ // HEADER TOP MENU
 .navigation-wrapper {
   display: flex;
+  position: fixed;
   width: 100%;
   height: 85px;
   align-items: center;
-  z-index: 999;
+  z-index: 9998;
   background: linear-gradient(
     153.32deg,
     rgba(255, 255, 255, 0.3) -65.62%,
@@ -82,7 +85,7 @@ body {
   );
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
-  padding-left: 100px;
+  padding: 0 20px 0 100px;
 }
 .navigation-content {
   display: flex;
@@ -129,10 +132,53 @@ body {
   align-items: center;
   font-weight: 500;
   cursor: pointer;
+  position: relative;
+  .nav-menu-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    padding: 15px 0 15px 15px; 
+    width: 170px;  
+    top: 120px;
+    left: 0;
+    backdrop-filter: blur(25px);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+    box-shadow: 0px 4px 24px 1px rgba(35,16,94,.25);
+    border-radius: 10px;
+    gap: 8px;
+    transition: 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+    a {
+      color: var(--textWhite);
+      height: 25px;
+      padding: 5px 0;
+      font-size: 15px;
+      transition: 0.3s ease;
+      white-space: nowrap;
+      width: 100%;
+   &:hover {
+    cursor: pointer;
+    color: var(--textGreen);
+    letter-spacing: 1px;
+   }
+    }
+  }
+  .services-dropdown{
+    width: 200px;
+  }
+  &:hover .nav-menu-dropdown {
+    opacity: 1;
+    top: 40px;
+    pointer-events: auto;
+  }
   p {
     font-size: 16px;
     color: var(--textWhite);
     position: relative;
+    text-align: center;
+    padding: 15px 0;
     &:hover {
       color: var(--textGreen);
     }
@@ -163,25 +209,196 @@ body {
     }
   }
 }
+.nav-pages-dropdown {
+  opacity: 1;
+  .nav-pages-hover {
+    display: flex;
+    position: relative; 
+    width: 100%;
+    &:hover .nav-pages-hover-dropdown {
+      opacity: 1;
+      top: -20px;
+    }
+    .nav-pages-hover-dropdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      padding: 15px 0 15px 15px; 
+      width: 170px;  
+      top: 20px;
+      left: 140px;
+      backdrop-filter: blur(25px);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+      box-shadow: 0px 4px 24px 1px rgba(35,16,94,.25);
+      border-radius: 10px;
+      gap: 8px;
+      transition: 0.5s ease;
+      opacity: 0;
+      a {
+        color: var(--textWhite);
+        height: 25px;
+        padding: 5px 0;
+        font-size: 15px;
+        transition: 0.3s ease;
+        white-space: nowrap;
+        width: 100%;
+        &:hover {
+          color: var(--textGreen);
+        }
+      }
+      
+  }
+}
+}
 .manipulation-block {
   display: flex;
-  gap: 25px;
   align-items: center;
-  .manipulation-circle {
+  flex: 1;
+  width: 480px;
+  justify-content: space-between;
+  padding-left: 80px;
+  .main-circles {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.manipulation-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #303141;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  .manipulation-dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 180px;
+    left: -265px;
+    background-color: #303141;
+    border: 1px solid #4c4d5a;
+    padding: 20px;
+    width: 300px;
+    gap: 24px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+    h1 {
+      color: white;
+      font-size: 20px;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+    label {
+      border-radius: 10px;
+      background-color: rgba(0,0,0,0);
+      border: 1px solid #4c4d5a;
+      padding: 10px 10px;
+      display: flex;
+      gap: 15px;
+     input {
+      outline: 0;
+      border: 0;
+      font-size: 18px;
+      width: 140px;
+      flex: 1 ;
+      background-color: rgba(0,0,0,0);
+      font-family: "Inter", sans-serif;
+      font-weight: 200;
+      color: white;
+     }
+     button {
+      background-color: var(--textGreen);
+      padding: 8px 12px;
+      border-radius: 20px;
+      outline: 0;
+      border: 0;
+      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      &:hover {
+        background-color: #09926a;
+        color: white;
+      }
+     }
+    }
+  }
+  i {
+    font-size: 20px;
+    color: var(--textWhite);
+  }
+}
+
+
+// LEFT MENU 
+.left-menu-wrapper {
+  position: fixed;
+  display: flex;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background: linear-gradient(153.32deg, rgba(255, 255, 255, 0.3) -65.62%, rgba(255, 255, 255, 0.1) 83.28%);
+  box-shadow: 0px 4px 24px -1px rgba(0,0,0,.2);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-right: 1px solid #4c4d5a;
+  width: 100px;
+  height: 100vh;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.left-menu-item {
+  display: flex;
+  flex-direction: column;
+  .menu-icon-block {
+    cursor: pointer;
+  > i {
+    font-size: 28px;
+    color: var(--textGray);
+  }
+  > p {
+    font-size: 11px;
+    color: var(--textGray);
+  }
+}
+&:nth-child(2) {
+  gap: 18px;
+  align-items: center;
+  .left-menu-circle {
+    border-radius: 50%;
+    border: 1px solid #4c4d5a;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #303141;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    i {
-      font-size: 20px;
-      color: var(--textWhite);
+    &:hover {
+      background-color: var(--textGreen);
     }
+    &:hover i {
+      color: white;
+    }
+    i {
+      font-size: 17px;
+      color: var(--textGreen);
+    }
+
   }
-  .manipulation-circle:nth-child(4) {
-    margin-left: 270px;
+}
+&:nth-child(3) {
+  p {
+    color: var(--textGray);
+    cursor: pointer;
   }
+}
 }

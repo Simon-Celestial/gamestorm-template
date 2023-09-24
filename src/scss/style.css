@@ -1,5 +1,5 @@
 :root {
-  --bodyColor: #161829;
+  --bodyColor: rgba(34,36,52,255);
   --textGreen: #0ef0ad;
   --textGray: #c5c5ca;
   --textWhite: #fff;
@@ -52,6 +52,7 @@ body {
   left: -10px;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 50;
 }
 
 .mouse-follower-dot {
@@ -66,17 +67,53 @@ body {
   left: -10px;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 50;
 }
 
+.main-page-decoration {
+  width: 100%;
+  height: 1100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.main-page-decoration .object-block img:nth-child(1) {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  animation: objectRotation 100s ease infinite;
+}
+.main-page-decoration .object-block img:nth-child(2) {
+  position: absolute;
+  left: calc(50% - 250px);
+  bottom: 5%;
+}
+.main-page-decoration .object-block img:nth-child(3) {
+  position: absolute;
+  top: 6%;
+  left: calc(50% - 250px);
+}
+
+@keyframes objectRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1080deg);
+  }
+}
 .site-wrapper {
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .navigation-wrapper {
   display: flex;
   position: fixed;
+  top: 0;
   width: 100%;
   height: 85px;
   align-items: center;
@@ -407,4 +444,262 @@ body {
 .left-menu-item:nth-child(3) p {
   color: var(--textGray);
   cursor: pointer;
+}
+
+.main-content {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.main-content .main-page-block {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.green-line-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  transform: skew(-17deg);
+}
+.green-line-block .green-big-line {
+  position: absolute;
+  width: 395px;
+  height: 120%;
+  bottom: 0;
+  background: #09926a;
+  z-index: -1;
+  right: 15%;
+  animation: grow 5s ease;
+}
+.green-line-block .green-small-line {
+  position: absolute;
+  width: 20px;
+  height: 120%;
+  bottom: 0;
+  background: #09926a;
+  z-index: -1;
+  right: 12%;
+  animation: shrink 8s linear infinite;
+}
+
+@keyframes grow {
+  from {
+    height: 10%;
+  }
+  to {
+    height: 120%;
+  }
+}
+@keyframes shrink {
+  0% {
+    height: 120%;
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height: 120%;
+  }
+}
+.green-line-transparent {
+  position: absolute;
+  left: -60%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  transform: skew(-17deg);
+}
+.green-line-transparent .green-big-transparent {
+  position: absolute;
+  width: 395px;
+  height: 0;
+  bottom: 0;
+  background: linear-gradient(179.33deg, rgba(9, 146, 106, 0) 5%, #09926A 90%);
+  z-index: -1;
+  right: 11%;
+  animation: trans-grow 10s linear infinite;
+}
+.green-line-transparent .green-small-transparent {
+  position: absolute;
+  width: 20px;
+  height: 25%;
+  bottom: 0;
+  background: linear-gradient(179.33deg, rgba(9, 146, 106, 0) 5%, #09926A 90%);
+  z-index: -1;
+  right: 9%;
+  animation: trans-shrink 10s linear infinite;
+}
+
+@keyframes trans-grow {
+  0% {
+    height: 0%;
+  }
+  50% {
+    height: 25%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+@keyframes trans-shrink {
+  0% {
+    height: 25%;
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height: 25%;
+  }
+}
+.main-title-container {
+  margin: 160px 0;
+  width: 1320px;
+  display: flex;
+  height: auto;
+  z-index: 20;
+  justify-content: space-between;
+}
+.main-title-container .left-title {
+  display: flex;
+  flex-direction: column;
+  width: 770px;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  gap: 15px;
+  justify-content: center;
+}
+.main-title-container .left-title > p {
+  color: var(--textGreen);
+  font-size: 32px;
+}
+.main-title-container .left-title h1 {
+  font-size: 80px;
+  color: var(--textWhite);
+}
+.main-title-container .left-title h2 {
+  font-size: 80px;
+  color: var(--textGreen);
+}
+.main-title-container .left-title b {
+  font-size: 24px;
+  color: var(--textGray);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+.main-title-container .left-title button {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  width: 198px;
+  padding: 15px 0;
+  border-radius: 15px;
+  outline: 0;
+  border: 0;
+  background-color: var(--textGreen);
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.main-title-container .left-title button:hover {
+  color: white;
+  background-color: #09926a;
+}
+
+.right-title {
+  width: 416px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.right-title .right-title-buttons {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.right-title .right-title-buttons .arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.right-title .right-title-buttons .arrow-circle:hover {
+  background-color: var(--textGreen);
+}
+.right-title .right-title-buttons .arrow-circle:hover i {
+  color: black;
+}
+.right-title .right-title-buttons .arrow-circle i {
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+  transition: 0.3s ease;
+}
+.right-title .title-block-arrow {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 15px;
+  padding: 20px 0;
+  align-items: end;
+}
+.right-title .title-block-arrow img {
+  width: 33px;
+  height: 29px;
+}
+.right-title .title-block-arrow h2 {
+  font-size: 24px;
+  font-family: "Chakra Petch", sans-serif;
+  margin-bottom: 5px;
+  color: var(--textWhite);
+}
+.right-title .right-title-main {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 15px 15px;
+  background-color: var(--textWhite);
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.right-title .right-title-main > img {
+  width: 376px;
+  height: 471px;
+}
+.right-title .right-title-main h2 {
+  font-size: 32px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.right-title .right-title-main .mobile-store-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

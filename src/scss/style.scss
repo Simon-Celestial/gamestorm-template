@@ -1,5 +1,5 @@
 :root {
-  --bodyColor: rgba(34,36,52,255);
+  --bodyColor: rgba(34, 36, 52, 255);
   --textGreen: #0ef0ad;
   --textGray: #c5c5ca;
   --textWhite: #fff;
@@ -37,7 +37,7 @@ body {
   background-color: var(--bodyColor);
   font-family: "Inter", sans-serif;
 }
-// MOUSE FOLLOWER 
+// MOUSE FOLLOWER
 .mouse-follower {
   border-radius: 50%;
   width: 30px;
@@ -66,12 +66,11 @@ body {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 50;
-
 }
 // ANIMATION MAIN PAGE
 .main-page-decoration {
   width: 100%;
-  height: 1100px;
+  height: 1040px;
   position: absolute;
   left: 0;
   top: 0;
@@ -467,7 +466,7 @@ body {
   .main-page-block {
     display: flex;
     width: 100%;
-    height: auto;
+    height: 1100px;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -516,7 +515,6 @@ body {
 @keyframes shrink {
   0% {
     height: 120%;
-
   }
   50% {
     height: 0%;
@@ -540,7 +538,11 @@ body {
     width: 395px;
     height: 0;
     bottom: 0;
-    background: linear-gradient(179.33deg, rgba(9, 146, 106, 0) 5%, #09926A 90%);
+    background: linear-gradient(
+      179.33deg,
+      rgba(9, 146, 106, 0) 5%,
+      #09926a 90%
+    );
     z-index: -1;
     right: 11%;
     animation: trans-grow 10s linear infinite;
@@ -550,7 +552,11 @@ body {
     width: 20px;
     height: 25%;
     bottom: 0;
-    background: linear-gradient(179.33deg, rgba(9, 146, 106, 0) 5%, #09926A 90%);
+    background: linear-gradient(
+      179.33deg,
+      rgba(9, 146, 106, 0) 5%,
+      #09926a 90%
+    );
     z-index: -1;
     right: 9%;
     animation: trans-shrink 10s linear infinite;
@@ -559,7 +565,6 @@ body {
 @keyframes trans-grow {
   0% {
     height: 0%;
-
   }
   50% {
     height: 25%;
@@ -571,7 +576,6 @@ body {
 @keyframes trans-shrink {
   0% {
     height: 25%;
-
   }
   50% {
     height: 0%;
@@ -581,10 +585,71 @@ body {
   }
 }
 
-
+.stars-area-template {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 100px;
+  height: 100px;
+  animation: stars-animation 8s linear infinite;
+  img {
+    max-width: 100%;
+    &:nth-child(1) {
+      position: absolute;
+      right: 0;
+    }
+    &:nth-child(2) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+.stars-area-two {
+  top: 57%;
+  left: 55%;
+}
+.stars-area-three {
+  top: 40%;
+  left: 5%;
+}
+.stars-area-fourth {
+  top: 18%;
+  left: 0%;
+  img {
+    &:nth-child(4) {
+      position: absolute;
+      right: 50px;
+      bottom: 50%;
+    }
+    &:nth-child(5) {
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+    }
+  }
+}
+@keyframes stars-animation {
+  0% {
+    width: 100px;
+    height: 100px;
+  }
+  50% {
+    width: 80px;
+    height: 80px;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+  }
+}
 
 .main-title-container {
-  margin: 160px 0;
+  margin: 150px 0;
   width: 1320px;
   display: flex;
   height: auto;
@@ -596,7 +661,7 @@ body {
     width: 770px;
     font-family: $chakra-petch;
     font-weight: 600;
-    gap: 15px;
+    gap: 2px;
     justify-content: center;
     > p {
       color: var(--textGreen);
@@ -605,6 +670,10 @@ body {
     h1 {
       font-size: 80px;
       color: var(--textWhite);
+    }
+    .text-holder-block {
+      display: flex;
+      align-items: center;
     }
     h2 {
       font-size: 80px;
@@ -626,7 +695,7 @@ body {
       outline: 0;
       border: 0;
       background-color: var(--textGreen);
-      margin-top: 20px;
+      margin-top: 30px;
       cursor: pointer;
       transition: 0.3s ease;
       &:hover {

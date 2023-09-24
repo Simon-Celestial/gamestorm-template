@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         isSearchDropdownVisible = !isSearchDropdownVisible;
-        event.stopPropagation(); 
+        event.stopPropagation();
     });
 
     let openDropdown = () => {
@@ -52,8 +52,27 @@ document.addEventListener('DOMContentLoaded', () => {
             isSearchDropdownVisible = false;
         }
     });
-
     searchDropdown.addEventListener("click", (event) => {
         event.stopPropagation();
     });
+
+    // MAIN PAGE SELF WRITING TEXT JS
+    const textHolder = document.getElementById('textHolder');
+    const words = 'Entertaining Joy Games'.split(' ');
+    const frameTime = 100;
+
+    let currentWord = 0;
+    let currentLetter = 0;
+    let direction = 1; 
+
+    setInterval(() => {
+        textHolder.innerHTML = words[currentWord].slice(0, currentLetter + 1);
+
+        if (currentLetter === (direction === 1 ? words[currentWord].length : -1)) {
+            direction *= -1;
+            if (direction === 1) currentWord = (currentWord + 1) % words.length;
+        }
+
+        currentLetter += direction;
+    }, frameTime);
 });

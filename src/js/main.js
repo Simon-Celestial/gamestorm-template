@@ -116,42 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ODOMETER FUNCTION JS 
-const experienceWrapper = document.getElementById("experienceWrapper");
-
-let odometerAnimation = (targetValue, elementId) => {
-    const odometerElement = document.getElementById(elementId);
-    let currentValue = 0;
-
-    let updateOdometer = () => {
-        if (currentValue < targetValue) {
-            currentValue++;
-            const valueStr = currentValue.toString().padStart(2, '0');
-
-            for (let i = 0; i < 2; i++) {
-                odometerElement.children[i].textContent = valueStr[i];
-            }
-
-            requestAnimationFrame(updateOdometer);
-        } else {
-            odometerElement.children[2].textContent = '+';
-        }
-    }
-
-    updateOdometer();
-}
-
-let isOdometerAnimated = false;
-
-document.addEventListener('scroll', (e) => {
-    if(window.scrollY > 720) {
-        if (!isOdometerAnimated) {
-            odometerAnimation(200, 'odometer');
-            isOdometerAnimated = true;
-        }
-
-    }
-})
 
 
-
-})
+// document.addEventListener('scroll', (e) => {
+//     if(window.scrollY > 650) {
+//         if (!isOdometerAnimated) {
+//             odometerAnimation(200, 'otometer');
+//             isOdometerAnimated = true;
+//         }
+//     }  
+// })
+});

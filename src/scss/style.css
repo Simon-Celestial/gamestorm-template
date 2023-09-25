@@ -955,10 +955,15 @@ body {
   outline-offset: 15px;
   width: 300px;
 }
-.experience-image-block .image-block-title .odometr {
+.experience-image-block .image-block-title .odometer {
   display: flex;
 }
-.experience-image-block .image-block-title .odometr h1 {
+.experience-image-block .image-block-title .odometer h1 {
+  font-size: 56px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #161829;
+}
+.experience-image-block .image-block-title .odometer h2 {
   font-size: 56px;
   font-family: "Chakra Petch", sans-serif;
   color: #161829;
@@ -1010,16 +1015,16 @@ body {
   flex-direction: column;
   gap: 15px;
 }
-.experience-title-block .experience-row .row-item .otometr {
+.experience-title-block .experience-row .row-item .odometer {
   display: flex;
   align-items: center;
   color: var(--textWhite);
 }
-.experience-title-block .experience-row .row-item .otometr h2 {
+.experience-title-block .experience-row .row-item .odometer h2 {
   font-size: 32px;
   font-family: "Chakra Petch", sans-serif;
 }
-.experience-title-block .experience-row .row-item .otometr h3 {
+.experience-title-block .experience-row .row-item .odometer h3 {
   font-size: 32px;
   font-family: "Chakra Petch", sans-serif;
   color: var(--textGreen);

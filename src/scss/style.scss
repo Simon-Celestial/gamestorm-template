@@ -974,9 +974,14 @@ body {
     outline: 1px solid var(--textGreen);
     outline-offset: 15px;
     width: 300px;
-    .odometr {
-      display: flex;
+    .odometer {
+      display: flex;      
       h1 {
+        font-size: 56px;
+        font-family: $chakra-petch;
+        color: #161829;
+      }
+      h2 {
         font-size: 56px;
         font-family: $chakra-petch;
         color: #161829;
@@ -1028,7 +1033,7 @@ body {
       height: auto; 
       flex-direction: column;
       gap: 15px;
-      .otometr {
+      .odometer {
         display: flex;
         align-items: center;
         color: var(--textWhite);

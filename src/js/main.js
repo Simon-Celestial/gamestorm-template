@@ -114,16 +114,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // NAVIGATION ANIMATION ON SCROLL JS
+    const navAnimation = document.getElementById("navAnimation");
+    let prevScrollY = 0;
 
-// ODOMETER FUNCTION JS 
+    document.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 100 && prevScrollY <= 100) {
+            navAnimation.classList.add("nav-animation");
+        } else if (currentScrollY <= 100 && prevScrollY > 100) {
+            navAnimation.classList.remove("nav-animation");
+        }
+
+        prevScrollY = currentScrollY;
+    });
+
+    //RETURN TO TOP ON SCROLL ANIMATION JS
+    const returnToTop = document.getElementById("returnToTop");
+    let previousScrollY = 0;
+
+    document.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 500 && previousScrollY <= 500) {
+            returnToTop.style.bottom = "120px";
+            returnToTop.style.right = "-10px";
+            returnToTop.style.transform = "rotate(-90deg)";
 
 
-// document.addEventListener('scroll', (e) => {
-//     if(window.scrollY > 650) {
-//         if (!isOdometerAnimated) {
-//             odometerAnimation(200, 'otometer');
-//             isOdometerAnimated = true;
-//         }
-//     }  
-// })
+        } else if (currentScrollY <= 500 && previousScrollY > 500) {
+            returnToTop.style.bottom = "-25px";
+            returnToTop.style.right = "80px";
+            returnToTop.style.transform = "rotate(0)";
+
+        }
+
+        previousScrollY = currentScrollY;
+    });
 });

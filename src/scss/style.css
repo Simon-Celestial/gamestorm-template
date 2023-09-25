@@ -37,6 +37,30 @@ body {
   width: 100vw;
   background-color: var(--bodyColor);
   font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.return-to-top {
+  display: flex;
+  gap: 20px;
+  position: fixed;
+  color: var(--textGreen);
+  align-items: center;
+  cursor: pointer;
+  z-index: 99999999;
+  transition: 0.8s ease;
+  bottom: -25px;
+  right: 80px;
+  transform: rotate(0);
+}
+.return-to-top p {
+  font-size: 20px;
+  font-style: "Chakra Petch", sans-serif;
+}
+.return-to-top span {
+  background-color: var(--textGreen);
+  width: 40px;
+  height: 1px;
 }
 
 .mouse-follower {
@@ -123,8 +147,21 @@ body {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
   padding: 0 20px 0 100px;
+  transition: 0.3s ease;
 }
 
+.nav-animation {
+  animation: navAnimation 1s ease;
+}
+
+@keyframes navAnimation {
+  from {
+    top: -85px;
+  }
+  to {
+    top: 0;
+  }
+}
 .navigation-content {
   display: flex;
   align-items: center;

@@ -1075,6 +1075,20 @@ body {
   width: 100%;
 }
 
+.joystick-img {
+  position: absolute;
+  right: 0;
+  top: 13%;
+  z-index: -1;
+}
+
+.joystick-img-two {
+  position: absolute;
+  left: 0;
+  bottom: 13%;
+  z-index: -1;
+}
+
 .our-games-content {
   display: flex;
   width: 1076px;
@@ -1155,6 +1169,54 @@ body {
   margin-top: 30px;
   background-color: #303141;
   padding: 15px 10px;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+.game-container .feature {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--textGreen);
+  height: 130px;
+  width: 80px;
+  overflow: hidden;
+}
+.game-container .feature p {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin-top: 40px;
+}
+.game-container .feature .filler-block {
+  display: flex;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--textGreen);
+}
+.game-container .feature .filler-block .feature-filler {
+  height: 32px;
+  width: 60px;
+  background-color: #303141;
+  position: absolute;
+  bottom: -14px;
+  left: 25px;
+  transform: rotate(42deg);
+}
+.game-container .feature .filler-block .feature-filler-two {
+  position: absolute;
+  bottom: -16px;
+  left: -12px;
+  transform: rotate(-35deg);
+  background-color: #303141;
+  height: 34px;
+  width: 71px;
 }
 
 .game-container-img {
@@ -1208,4 +1270,119 @@ body {
   color: #161829;
   transition: 0.3s ease;
   z-index: 5;
+}
+
+.game-container-img-two {
+  border-radius: 10px;
+  background-image: url("../images/game-image-3.png");
+}
+
+.game-container-img-three {
+  border-radius: 10px;
+  background-image: url("../images/game-image-4.png");
+}
+
+.game-container-img-fourth {
+  border-radius: 10px;
+  background-image: url("../images/game-image-5.png");
+}
+
+.game-container-title {
+  width: 620px;
+  height: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+.game-container-title h3 {
+  font-family: "Chakra Petch", sans-serif;
+  color: white;
+  font-size: 32px;
+  width: 100%;
+  cursor: pointer;
+}
+.game-container-title .game-types-block {
+  width: 100%;
+  display: flex;
+  height: auto;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+.game-container-title .game-types-block p {
+  color: var(--textGray);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+.game-container-title .game-types-block span {
+  color: var(--textGray);
+  font-size: 14px;
+}
+.game-container-title > p {
+  color: var(--textGray);
+  font-size: 16px;
+  margin-top: 30px;
+}
+.game-container-title > p span {
+  color: var(--textGreen);
+  cursor: pointer;
+}
+
+.game-review-block {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 15px 15px;
+  background-color: #404250;
+  border-radius: 10px;
+}
+.game-review-block .review-item {
+  flex-direction: column;
+  display: flex;
+}
+.game-review-block .review-item h1 {
+  font-size: 24px;
+  font-family: "Chakra Petch", sans-serif;
+  color: white;
+}
+.game-review-block .review-item p {
+  font-size: 14px;
+  color: var(--textGray);
+}
+.game-review-block .review-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+.game-review-block .review-item .review-item-block {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.game-review-block .review-item .review-item-block i {
+  font-size: 23px;
+  color: #edcb50;
+}
+.game-review-block .review-item .review-item-block h1 {
+  font-size: 24px;
+  font-family: "Chakra Petch", sans-serif;
+  color: white;
+}
+.game-review-block .review-item .review-item-block p {
+  font-size: 14px;
+  color: var(--textGray);
+}
+
+.mobile-store {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  align-items: center;
+  width: 100%;
+}
+.mobile-store img {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

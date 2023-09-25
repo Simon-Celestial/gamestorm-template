@@ -147,9 +147,9 @@
         <!-- LEFT MENU FIXED -->
         <div class="left-menu-wrapper">
             <div class="left-menu-item">
-                <div class="menu-icon-block">
-                    <i class="ph ph-list"></i>
-                    <!-- <i class="ph ph-x"></i> -->
+                <div class="menu-icon-block" id="leftMenuButton">
+                    <i id="leftMenuIcon" class="ph ph-list"></i>
+                    <i class="ph ph-x" id="leftMenuClose"></i>
                     <p>MENU</p>
                 </div>
             </div>
@@ -169,6 +169,135 @@
             </div>
             <div class="left-menu-item">
                 <p>ENG</p>
+            </div>
+        </div>
+        <div class="left-menu-modal-block" id="modalWindow">
+            <div class="menu-modal-top">
+                <div class="navigation-menu" id="navigationModal">
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown">
+                            <a href="">Home One</a>
+                            <a href="">Home Two</a>
+                            <a href="">Home Three</a>
+                        </div>
+                        <p>Home<i class="ph ph-caret-down"></i>
+                        </p>
+                        <div class="menu-item-line"></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown">
+                            <a href="">Games</a>
+                            <a href="">Games Details</a>
+                        </div>
+
+                        <p>Games<i class="ph ph-caret-down"></i>
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown services-dropdown">
+                            <a href="">Services One</a>
+                            <a href="">Services Two</a>
+                            <a href="">Services Three</a>
+                            <a href="">Services Details</a>
+                            <a href="">Services Details Two</a>
+                        </div>
+                        <p>Services<i class="ph ph-caret-down"></i>
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <p>About
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown nav-pages-dropdown">
+                            <a href="">Pricing Plan</a>
+                            <a href="">Store</a>
+                            <div class="nav-pages-hover">
+                                <a href="">Shop Details<i class="ph ph-caret-right"></i></a>
+                                <div class="nav-pages-hover-dropdown">
+                                    <a href="">Shop Details One</a>
+                                    <a href="">Shop Details One</a>
+                                </div>
+                            </div>
+                            <a href="">Cart</a>
+                            <a href="">Checkout</a>
+                            <div class="nav-pages-hover">
+                                <a href="">Career<i class="ph ph-caret-right"></i></a>
+                                <div class="nav-pages-hover-dropdown">
+                                    <a href="">Career</a>
+                                    <a href="">Career Details</a>
+                                </div>
+                            </div>
+                            <a href="">Privacy Policy</a>
+                            <a href="">Terms Conditions</a>
+                        </div>
+                        <p>Pages<i class="ph ph-caret-down"></i>
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="nav-menu-dropdown">
+                            <a href="">Blog</a>
+                            <a href="">Blog Details</a>
+                        </div>
+                        <p>Blog<i class="ph ph-caret-down"></i>
+                        </p>
+                    </div>
+
+                    <div class="menu-item">
+                        <p>Contact</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-modal-bottom" id="bottomBlockModal">
+                <div class="modal-bottom-item">
+                    <h1>Office</h1>
+                    <div class="modal-bottom-title">
+                        <div class="modal-bottom-circle">
+                            <i class="ph ph-map-pin"></i>
+                        </div>
+                        <div class="near-circle-block">
+                            <h2>London</h2>
+                            <p>Al. Brucknera Aleksandra 63,</p>
+                            <p>Wrocław 51-410</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-bottom-item">
+                    <h1>Email Address</h1>
+                    <div class="modal-bottom-title">
+                        <div class="modal-bottom-circle">
+                            <i class="ph ph-envelope-simple"></i>
+                        </div>
+                        <div class="near-circle-block">
+                            <p>Example@gmail.com</p>
+                            <p>Example@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-bottom-item">
+                    <h1>Phone Number</h1>
+                    <div class="modal-bottom-title">
+                        <div class="modal-bottom-circle">
+                            <i class="ph ph-phone"></i>
+                        </div>
+                        <div class="near-circle-block">
+                            <p>(302) 555-0107</p>
+                            <p>(302) 555-0107</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-bottom-item">
+                    <h1>Working Hours</h1>
+                    <div class="modal-bottom-title">
+                        <div class="modal-bottom-circle">
+                            <i class="ph ph-clock"></i>
+                        </div>
+                        <div class="near-circle-block">
+                            <p>Mon-Fri: 09: 00-18: 00</p>
+                            <p>Sat-Sun: Weekend</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- PAGE MAIN CONTENT -->
@@ -212,7 +341,7 @@
                     <img src="./src/images/ellipse-5.png" class="star-2" alt="space-object">
                 </div>
 
-
+                <!-- MAIN PAGE MIDDLE CONTENT  -->
                 <div class="main-title-container">
                     <div class="left-title">
                         <p>Building Gaming Worlds</p>
@@ -220,7 +349,6 @@
                         <div class="text-holder-block">
                             <h2 id="textHolder"></h2>
                             <h2>|</h2>
-
                         </div>
                         <b>Developing games that are imaginative, fun and bringing colors to the gaming world
                         </b>
@@ -251,6 +379,77 @@
                                 <i class="ph ph-arrow-right"></i>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MAIN PAGE SECOND SECTION -->
+
+            <div class="experience-wrapper" id="experienceWrapper">
+                <div class="experience-content">
+                    <div class="experience-image-block">
+                        <div class="image-block-title">
+                            <div class="odometr" id="odometer">
+                                <h1>2</h1>
+                                <h1>0</h1>
+                                <h1>+</h1>
+                            </div>
+                            <p>Years of
+                                <br>
+                                Experience
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="experience-title-block">
+                        <h4>Welcome to <span>Gamestorm</span> Game Studios</h4>
+                        <span>Bringing People Together Through <span>The Power Of Play</span></span>
+                        <p>As Game Gamestorm, we continue to open doors to new worlds every day and we are
+                            working excitedly for creating new games and unique ideas!</p>
+                        <div class="experience-row">
+                            <div class="row-item">
+                                <div class="otometr">
+                                    <h1>5</h1>
+                                    <h1>0</h1>
+                                    <h1>0</h1>
+                                    <h2>M</h2>
+                                    <h3>+</h3>
+                                </div>
+                                <p>Downloads, or 6% of the world’s population.
+                                </p>
+                                <span></span>
+                            </div>
+                            <div class="row-item">
+                                <div class="otometr">
+                                    <h1>2</h1>
+                                    <h2>M</h2>
+                                    <h3>+</h3>
+                                </div>
+                                <p>Our games have over 20 million unique daily users.
+                                </p>
+                                <span></span>
+                            </div>
+                            <div class="row-item">
+                                <div class="otometr">
+                                    <h1>5</h1>
+                                    <h1>2</h1>
+                                    <h3>+</h3>
+                                </div>
+                                <p>Experts collaborating to blow your mind in one place.
+                                </p>
+                                <span></span>
+                            </div>
+                            <div class="row-item">
+                                <div class="otometr">
+                                    <h1>4</h1>
+                                    <h1>K</h1>
+                                    <h3>+</h3>
+                                </div>
+                                <p>The Gamestorm Studio is launching with 4K+ Games.
+                                </p>
+                                <span></span>
+                            </div>
+                        </div>
+                        <button>Explore Our Games</button>
                     </div>
                 </div>
             </div>

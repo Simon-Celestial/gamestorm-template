@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // MOUSE FOLLOWER JS
+    // MOUSE FOLLOWER JS
     const follower = document.querySelector('.mouse-follower');
     const dotFollower = document.querySelector('.mouse-follower-dot');
 
@@ -10,10 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         frame++;
         if (frame % 2) {
-            follower.style.left = e.pageX + 'px';
-            follower.style.top = e.pageY + 'px';
-            dotFollower.style.left = e.pageX + 'px';
-            dotFollower.style.top = e.pageY + 'px';
+            const mouseX = e.pageX - window.scrollX;
+            const mouseY = e.pageY - window.scrollY;
+
+            follower.style.left = mouseX + 'px';
+            follower.style.top = mouseY + 'px';
+            dotFollower.style.left = mouseX + 'px';
+            dotFollower.style.top = mouseY + 'px';
         }
     });
 
@@ -63,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentWord = 0;
     let currentLetter = 0;
-    let direction = 1; 
+    let direction = 1;
 
     setInterval(() => {
         textHolder.innerHTML = words[currentWord].slice(0, currentLetter + 1);
@@ -75,4 +79,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentLetter += direction;
     }, frameTime);
-});
+
+    // MODAL FROM LEFT MENU
+    const modalWindow = document.getElementById('modalWindow');
+    const leftMenuButton = document.getElementById('leftMenuButton');
+    const leftMenuClose = document.getElementById('leftMenuClose');
+    const leftMenuIcon = document.getElementById('leftMenuIcon');
+    const navigationModal = document.getElementById('navigationModal');
+    const bottomBlockModal = document.getElementById('bottomBlockModal');
+
+
+
+    leftMenuButton.addEventListener("click", () => {
+        if (leftMenuIcon.style.display === "block" && modalWindow.style.visibility === "hidden") {
+            leftMenuIcon.style.display = "none";
+            leftMenuClose.style.display = "block";
+            modalWindow.style.visibility = "visible";
+            modalWindow.style.opacity = "1";
+            navigationModal.style.gap = "30px";
+            bottomBlockModal.style.bottom = "0";
+            bottomBlockModal.style.opacity = "1";
+
+        } else {
+            leftMenuIcon.style.display = "block";
+            leftMenuClose.style.display = "none"
+            modalWindow.style.visibility = "hidden";
+            modalWindow.style.opacity = "0";
+            navigationModal.style.gap = "0";
+            bottomBlockModal.style.bottom = "-100px";
+            bottomBlockModal.style.opacity = "0";
+
+
+
+        }
+    });
+
+
+// ODOMETER FUNCTION JS 
+const experienceWrapper = document.getElementById("experienceWrapper");
+
+let odometerAnimation = (targetValue, elementId) => {
+    const odometerElement = document.getElementById(elementId);
+    let currentValue = 0;
+
+    let updateOdometer = () => {
+        if (currentValue < targetValue) {
+            currentValue++;
+            const valueStr = currentValue.toString().padStart(2, '0');
+
+            for (let i = 0; i < 2; i++) {
+                odometerElement.children[i].textContent = valueStr[i];
+            }
+
+            requestAnimationFrame(updateOdometer);
+        } else {
+            odometerElement.children[2].textContent = '+';
+        }
+    }
+
+    updateOdometer();
+}
+
+let isOdometerAnimated = false;
+
+document.addEventListener('scroll', (e) => {
+    if(window.scrollY > 720) {
+        if (!isOdometerAnimated) {
+            odometerAnimation(200, 'odometer');
+            isOdometerAnimated = true;
+        }
+
+    }
+})
+
+
+
+})

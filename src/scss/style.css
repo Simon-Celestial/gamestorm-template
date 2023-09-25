@@ -407,11 +407,21 @@ body {
   flex-direction: column;
 }
 .left-menu-item .menu-icon-block {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   cursor: pointer;
 }
 .left-menu-item .menu-icon-block > i {
+  display: block;
   font-size: 28px;
   color: var(--textGray);
+}
+.left-menu-item .menu-icon-block > i:nth-child(2) {
+  display: none;
 }
 .left-menu-item .menu-icon-block > p {
   font-size: 11px;
@@ -444,6 +454,138 @@ body {
 .left-menu-item:nth-child(3) p {
   color: var(--textGray);
   cursor: pointer;
+}
+
+.left-menu-modal-block {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.4) 100%);
+  box-shadow: 0px 4px 24px 1px rgba(35, 16, 94, 0.25);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  position: fixed;
+  z-index: 99999;
+  left: 100px;
+  top: 0;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 95%;
+  opacity: 0;
+  transition: 1s ease;
+  visibility: hidden;
+}
+
+.menu-modal-top {
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  display: flex !important;
+  background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+  box-shadow: none;
+}
+.menu-modal-top > .navigation-menu {
+  gap: 0;
+  transition: 1s ease;
+}
+.menu-modal-top > .navigation-menu .menu-item p {
+  font-size: 32px;
+  font-family: "Chakra Petch", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.menu-modal-top > .navigation-menu .menu-item p i {
+  font-size: 32px;
+}
+.menu-modal-top > .navigation-menu .menu-item .nav-menu-dropdown {
+  padding-right: 20px;
+  padding-bottom: 30px;
+  width: auto;
+  top: 60px;
+  gap: 20px;
+}
+.menu-modal-top > .navigation-menu .menu-item .nav-menu-dropdown .nav-pages-hover a {
+  font-size: 25px;
+}
+.menu-modal-top > .navigation-menu .menu-item .nav-menu-dropdown .nav-pages-hover .nav-pages-hover-dropdown {
+  gap: 25px;
+  width: auto;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.menu-modal-top > .navigation-menu .menu-item .nav-menu-dropdown a {
+  font-size: 25px;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.menu-modal-bottom {
+  height: 50vh;
+  align-items: end;
+  justify-content: center;
+  display: flex !important;
+  background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+  box-shadow: none;
+  position: absolute;
+  bottom: -100px;
+  right: 0;
+  width: 100%;
+  transition: 1s ease;
+  opacity: 0;
+}
+.menu-modal-bottom .modal-bottom-item {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 212px;
+  border-top: 1px solid rgba(197, 197, 197, 0.308);
+  padding: 50px;
+  gap: 20px;
+  justify-content: center;
+}
+.menu-modal-bottom .modal-bottom-item:not(:last-child) {
+  border-right: 1px solid rgba(197, 197, 197, 0.308);
+}
+.menu-modal-bottom .modal-bottom-item h1 {
+  color: white;
+  font-size: 25px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.menu-modal-bottom .modal-bottom-item .modal-bottom-title {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  gap: 20px;
+}
+.menu-modal-bottom .modal-bottom-item .modal-bottom-title .modal-bottom-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #303141;
+  border-radius: 50%;
+}
+.menu-modal-bottom .modal-bottom-item .modal-bottom-title .modal-bottom-circle i {
+  color: var(--textGreen);
+  font-size: 22px;
+}
+.menu-modal-bottom .modal-bottom-item .modal-bottom-title .near-circle-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: center;
+  font-family: "Chakra Petch", sans-serif;
+  color: white;
+}
+.menu-modal-bottom .modal-bottom-item .modal-bottom-title .near-circle-block h2 {
+  font-size: 20px;
+}
+.menu-modal-bottom .modal-bottom-item .modal-bottom-title .near-circle-block p {
+  font-family: "Inter", sans-serif;
+  color: var(--textGray);
 }
 
 .main-content {
@@ -770,4 +912,144 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.experience-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  width: 100%;
+  height: auto;
+  background-color: #161829;
+}
+
+.experience-content {
+  display: flex;
+  width: 1320px;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.experience-image-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 636px;
+  height: 664px;
+  background-image: url("../images/about-block-bg.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.experience-image-block .image-block-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--textGreen);
+  padding: 30px;
+  outline: 1px solid var(--textGreen);
+  outline-offset: 15px;
+  width: 300px;
+}
+.experience-image-block .image-block-title .odometr {
+  display: flex;
+}
+.experience-image-block .image-block-title .odometr h1 {
+  font-size: 56px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #161829;
+}
+
+.experience-title-block {
+  display: flex;
+  width: 530px;
+  height: 664px;
+  flex-direction: column;
+  padding: 20px 10px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.experience-title-block h4 {
+  font-size: 24px;
+  color: var(--textWhite);
+  margin-bottom: 20px;
+}
+.experience-title-block h4 span {
+  color: var(--textGreen);
+}
+.experience-title-block > p {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.experience-title-block > span {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--textWhite);
+  margin-bottom: 20px;
+}
+.experience-title-block > span > span {
+  color: var(--textGreen);
+}
+.experience-title-block .experience-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+.experience-title-block .experience-row .row-item {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+  flex-direction: column;
+  gap: 15px;
+}
+.experience-title-block .experience-row .row-item .otometr {
+  display: flex;
+  align-items: center;
+  color: var(--textWhite);
+}
+.experience-title-block .experience-row .row-item .otometr h2 {
+  font-size: 32px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.experience-title-block .experience-row .row-item .otometr h3 {
+  font-size: 32px;
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--textGreen);
+}
+.experience-title-block .experience-row .row-item > p {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: var(--textGray);
+}
+.experience-title-block .experience-row .row-item span {
+  width: 86px;
+  height: 1px;
+  background-color: var(--textGreen);
+  margin-bottom: 20px;
+}
+.experience-title-block button {
+  background-color: var(--textGreen);
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  outline: 0;
+  border: 0;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.experience-title-block button:hover {
+  background-color: #09926a;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

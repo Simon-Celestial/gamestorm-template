@@ -1057,4 +1057,155 @@ body {
 .experience-title-block button:hover {
   background-color: #09926a;
   color: white;
+}
+
+.our-games-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  background-color: #222434;
+  background-image: url("../images/our-games-bg.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  width: 100%;
+}
+
+.our-games-content {
+  display: flex;
+  width: 1076px;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.our-games-content .our-games-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 636px;
+  height: auto;
+  gap: 20px;
+  font-family: "Chakra Petch", sans-serif;
+  color: white;
+}
+.our-games-content .our-games-title h4 {
+  font-size: 24px;
+}
+.our-games-content .our-games-title h4 span {
+  color: var(--textGreen);
+}
+.our-games-content .our-games-title > span {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+.our-games-content .our-games-title > span > span {
+  color: var(--textGreen);
+}
+.our-games-content .our-games-title p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--textGray);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 25px;
+}
+
+.our-games-buttons-block {
+  display: flex;
+  width: 542px;
+  gap: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.288);
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.our-games-buttons-block .button-container {
+  width: 60px;
+  height: 60px;
+  background-color: #303141;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.our-games-buttons-block .button-container:hover {
+  background-color: #09926a;
+}
+.our-games-buttons-block .button-container i {
+  font-size: 40px;
+  color: white;
+}
+
+.game-container {
+  display: flex;
+  width: 100%;
+  height: 520px;
+  border: 1px solid rgba(128, 128, 128, 0.288);
+  border-radius: 10px;
+  margin-top: 30px;
+  background-color: #303141;
+  padding: 15px 10px;
+}
+
+.game-container-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 415px;
+  height: 100%;
+  background-image: url("../images/game-image-1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.game-container-img .game-container-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--textGreen);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+.game-container-img .game-container-play::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: #09926a;
+  left: -20px;
+  top: 0;
+  border-radius: 50%;
+  scale: 0;
+  transition: 0.3s ease;
+}
+.game-container-img .game-container-play:hover::after {
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
+}
+.game-container-img .game-container-play:hover p {
+  color: white;
+}
+.game-container-img .game-container-play p {
+  font-size: 20px;
+  font-style: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  color: #161829;
+  transition: 0.3s ease;
+  z-index: 5;
 }/*# sourceMappingURL=style.css.map */
